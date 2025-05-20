@@ -5,6 +5,7 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
 }
 
 body::before {
@@ -16,13 +17,10 @@ body::before {
     /* desfoca o fundo */
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
-    /* camada acima do fundo */
-    pointer-events: none;
-    /* permite clicar nos elementos abaixo */
 }
 
-body>* {
+
+body>* { /* (*>) significa que TODO FILHO DIRETO do body ficara por cima do html e do body:: before   */
     position: relative;
     z-index: 2;
-    /* garante que o conteúdo fique acima do overlay */
 }
