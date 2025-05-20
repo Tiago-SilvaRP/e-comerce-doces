@@ -3,11 +3,21 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--backgroundText);
     max-width: 1200px;
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
+
+    @media(max-width: 768px) {
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    @media(max-width: 1200px) {
+        margin-top: 0;
+        border-radius: 0;
+    }
 }
 
 .header .nav-list {
@@ -19,9 +29,9 @@
 
         @media(max-width: 768px) {
             position: absolute;
-            background: #6e6c6c;
+            background: var(--backgroundText);
             flex-direction: column;
-            top: 100%;
+            top: 168%;
             right: -20px;
             width: 200px;
             padding: 15px;

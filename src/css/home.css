@@ -3,19 +3,35 @@
     align-items: center;
     justify-content: center;
     margin: 20px;
-    height: 100vh;
+    height: 100dvh;
     max-width: 1200px;
     margin: auto;
 
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
+
     .text-home {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: var(--backgroundText);
         padding: 1rem 1.5rem;
         border-radius: 10px;
         margin: 2rem;
 
+        @media(max-width: 768px) {
+            margin-top: -70px;
+        }
+
         p {
             margin-top: 10px;
             font-size: 18px;
+
+            @media(max-width: 768px) {
+                font-size: 16px;
+            }
+
+            @media(max-width: 330px) {
+                font-size: 14px;
+            }
         }
 
         .quality {
@@ -34,8 +50,21 @@
     .img-home {
         max-width: 600px;
 
+        @media(max-width: 768px) {
+            max-width: 300px;
+        }
+
+        @media(max-width: 460px) {
+            max-width: 250px;
+        }
+
+        @media(max-width: 330px) {
+            max-width: 200px;
+        }
+
         img {
             width: 100%;
         }
     }
+
 }
