@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="./src/css/store.css">
 
 <body>
-    <header class="header">
+    <header class="container header">
         <h2 class="Logo">Doces&cia</h2>
 
         <nav class="nav-list">
@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-    <section class="container-home" id="home">
+    <section class=" container home" id="home">
         <div class="text-home">
             <h1 class="tiTle">Bem-vindo à Doces&cia</h1>
             <p>Na Doces&cia, cada doce é feito com carinho, qualidade e aquele toque especial que só quem ama
@@ -55,19 +55,19 @@
         </div>
     </section>
 
-    <section class="store">
+    <section class="store container" id="products">
         <div class="title-desserts">
             <h2>Sobremesas</h2>
         </div>
 
-        <div class="dessert">
-            <div>
+        <div class="dessert waffle">
+            <div class="container-img">
                 <picture class="img-dessert">
-                    <source media="(max-width: 460px)"  srcset="./src/images/image-waffle-thumbnail.jpg">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-waffle-thumbnail.jpg">
                     <source media="(max-width: 768px)" srcset="./src/images/image-waffle-tablet.jpg">
                     <img src="./src/images/image-waffle-desktop.jpg" alt="Imagem da sobremesa">
                 </picture>
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Waffle</span>
@@ -75,10 +75,14 @@
             <span class="price">$6.50</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert brulee">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-creme-brulee-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-creme-brulee-tablet.jpg">
+                    <img src="./src/images/image-creme-brulee-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Creme Brulée</span>
@@ -86,10 +90,14 @@
             <span class="price">$7.00</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert macaron">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-macaron-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-macaron-tablet.jpg">
+                    <img src="./src/images/image-macaron-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Macaron</span>
@@ -97,10 +105,14 @@
             <span class="price">$8.00</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert tiramisu">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-tiramisu-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-tiramisu-tablet.jpg">
+                    <img src="./src/images/image-tiramisu-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Tiramisu</span>
@@ -108,10 +120,14 @@
             <span class="price">$5.50</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert baklava">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-baklava-thumbnail.jpg">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-baklava-tablet.jpg">
+                    <img src="./src/images/image-baklava-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Baklava</span>
@@ -119,10 +135,14 @@
             <span class="price">4.00</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert meringue">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-meringue-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-meringue-tablet.jpg">
+                    <img src="./src/images/image-meringue-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Pie</span>
@@ -130,10 +150,14 @@
             <span class="price">$5.00</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert cake">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-cake-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-cake-tablet.jpg">
+                    <img src="./src/images/image-cake-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Cake</span>
@@ -141,10 +165,14 @@
             <span class="price">$4.50</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert brownie">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-brownie-thumbnail.jpg">
+                    <source media="(max-width: 460px)" srcset="./src/images/image-brownie-tablet.jpg">
+                    <img src="./src/images/image-brownie-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Brownie</span>
@@ -152,10 +180,14 @@
             <span class="price">$5.50</span>
         </div>
 
-        <div class="dessert">
-            <div class="img-dessert">
-                <img src="" alt="Imagem da sobremesa">
-                <span class="add-to-cart">Adicionar ao carrinho</span>
+        <div class="dessert cotta">
+            <div class="container-img">
+                <picture class="img-dessert">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-panna-cotta-thumbnail.jpg">
+                    <source media="(max-width: 768px)" srcset="./src/images/image-panna-cotta-tablet.jpg">
+                    <img src="./src/images/image-panna-cotta-desktop.jpg" alt="Imagem da sobremesa">
+                </picture>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
             </div>
 
             <span class="type-dessert">Panna Cotta</span>
@@ -163,16 +195,25 @@
             <span class="price">$6.50</span>
         </div>
 
-    </section>
+        <section class="cart">
+            <h3>Seu Carrinho (<span>0</span>)</h3>
+            <img src="./src/images/illustration-empty-cart.svg"
+                alt="Imagem ilustrativa de bolo na section carrinho de compras">
+            <p>Seu pedido será adicionado aqui</p>
 
-    <!-- <section class="container-history" id="about">
+            <div id="cart-list"></div>
+        </section>
+
+
+
+        <!-- <section class="container-history" id="about">
         <h2>Nossa História</h2>
         <p>Tudo começou com uma simples paixão por adoçar os momentos especiais da vida. A Doces&Cia nasceu na cozinha da Dona Clara, onde receitas de família se transformavam em verdadeiras obras de arte açucaradas. Com muito carinho, dedicação e uma pitada de criatividade, o que era um hobby virou um sonho compartilhado.</p>
         <p>Desde então, nossa missão tem sido levar mais do que apenas doces — queremos entregar afeto em forma de sabor. Seja em aniversários, casamentos, comemorações ou apenas para alegrar o dia, cada produto é feito artesanalmente, com ingredientes selecionados e aquele toque especial que só quem ama o que faz consegue colocar.</p>
         <p>Hoje, a Doces&Cia é reconhecida pelo cuidado em cada detalhe, pelo sabor inesquecível e pelo sorriso que cada mordida provoca. Continuamos crescendo, mas sem nunca perder o principal ingrediente da nossa receita: o amor.</p>
     </section> -->
 
-    <script src="src/js/header.js"></script>
+        <script src="src/js/header.js"></script>
 </body>
 
 </html>
