@@ -1,8 +1,111 @@
+.store {
+    display: grid;
+    grid-template-areas:
+        "title-desserts title-desserts title-desserts cart"
+        "waffle brulee macaron cart"
+        "tiramisu baklava meringue cart"
+        "cake brownie cotta cart";
+
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--Rose100);
+    padding: 35px 70px;
+    border-radius: 10px;
+    color: var(--Rose900);
+
+    .dessert {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        p,
+        span {
+            padding: 2px 37px;
+        }
+
+        .container-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+
+            .add-to-cart {
+                position: absolute;
+                padding: 10px;
+                bottom: -15px;
+                border: solid 1px var(--Rose300);
+                background: var(--Rose100);
+                border-radius:20px;
+
+                &::before {
+                    content: url("../images/icon-add-to-cart.svg");
+                    padding: 0 8px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        .type-dessert {
+            color: var(--Rose400)
+        }
+
+        .price {
+            color: var(--Shop);
+        }
+    }
+}
+
+.title-desserts {
+    grid-area: title-desserts;
+    font-weight: 900;
+    padding: 20px 40px;
+}
+
 .img-dessert {
     display: block;
-    max-width: 200px;
+    position: relative;
+    margin: auto;
+    max-width: 250px;
 
     img {
         width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.waffle { grid-area: waffle; }
+
+.brulee { grid-area: brulee; }
+
+.macaron { grid-area: macaron; }
+
+.tiramisu { grid-area: tiramisu; }
+
+.baklava { grid-area: baklava; }
+
+.meringue { grid-area: meringue; }
+
+.cake { grid-area: cake; }
+
+.brownie { grid-area: brownie; }
+
+.cotta { grid-area: cotta; }
+
+.cart {
+    grid-area: cart;
+    background: var(--Rose50);
+    height: 280px;
+    padding: 20px 40px;
+    text-align: center;
+    color: var(--Shop);
+    border-radius: 10px;
+
+    img,
+    p {
+        padding-top: 15px;
+    }
+
+    p {
+        color: var(--Rose400);
     }
 }
