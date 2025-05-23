@@ -1,10 +1,9 @@
-.container-home {
+.home {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px;
     height: 100dvh;
-    max-width: 1200px;
     margin: auto;
 
     @media(max-width: 768px) {
