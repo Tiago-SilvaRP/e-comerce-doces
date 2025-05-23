@@ -19,8 +19,12 @@ body::before {
     z-index: 1;
 }
 
-
 body>* { /* (*>) significa que TODO FILHO DIRETO do body ficara por cima do html e do body:: before   */
     position: relative;
     z-index: 2;
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
 }
