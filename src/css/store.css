@@ -1,14 +1,21 @@
+.container-store {
+    display: flex;
+    background-color: var(--Rose100);
+    border-radius: 10px;
+}
+
 .store {
     display: grid;
     grid-template-areas:
-        "title-desserts title-desserts title-desserts cart"
-        "waffle brulee macaron cart"
-        "tiramisu baklava meringue cart"
-        "cake brownie cotta cart";
+        "title-desserts title-desserts title-desserts"
+        "waffle brulee macaron"
+        "tiramisu baklava meringue"
+        "cake brownie cotta";
 
-    grid-template-columns: repeat(4, 1fr);
-    background-color: var(--Rose100);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
     padding: 35px 70px;
+    gap: 30px;
     border-radius: 10px;
     color: var(--Rose900);
 
@@ -16,17 +23,17 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-bottom: 20px;
 
         p,
         span {
-            padding: 2px 37px;
+            padding: 2px 0;
         }
 
         .container-img {
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
             margin-bottom: 30px;
 
             .add-to-cart {
@@ -35,12 +42,18 @@
                 bottom: -15px;
                 border: solid 1px var(--Rose300);
                 background: var(--Rose100);
-                border-radius:20px;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: box-shadow 0.3s ease-out;
 
                 &::before {
                     content: url("../images/icon-add-to-cart.svg");
                     padding: 0 8px;
                     vertical-align: middle;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 8px var(--Shop);
                 }
             }
         }
@@ -58,7 +71,7 @@
 .title-desserts {
     grid-area: title-desserts;
     font-weight: 900;
-    padding: 20px 40px;
+    padding-left: 10px;
 }
 
 .img-dessert {
@@ -71,34 +84,53 @@
         width: 100%;
         border-radius: 10px;
     }
+
 }
 
-.waffle { grid-area: waffle; }
+.waffle {
+    grid-area: waffle;
+}
 
-.brulee { grid-area: brulee; }
+.brulee {
+    grid-area: brulee;
+}
 
-.macaron { grid-area: macaron; }
+.macaron {
+    grid-area: macaron;
+}
 
-.tiramisu { grid-area: tiramisu; }
+.tiramisu {
+    grid-area: tiramisu;
+}
 
-.baklava { grid-area: baklava; }
+.baklava {
+    grid-area: baklava;
+}
 
-.meringue { grid-area: meringue; }
+.meringue {
+    grid-area: meringue;
+}
 
-.cake { grid-area: cake; }
+.cake {
+    grid-area: cake;
+}
 
-.brownie { grid-area: brownie; }
+.brownie {
+    grid-area: brownie;
+}
 
-.cotta { grid-area: cotta; }
+.cotta {
+    grid-area: cotta;
+}
 
 .cart {
-    grid-area: cart;
     background: var(--Rose50);
-    height: 280px;
+    margin-top: 40px;
     padding: 20px 40px;
     text-align: center;
     color: var(--Shop);
     border-radius: 10px;
+    height: min-content;
 
     img,
     p {
@@ -107,5 +139,53 @@
 
     p {
         color: var(--Rose400);
+    }
+}
+
+.selected-img {
+    border: solid 1px var(--Shop);
+
+    &:hover {
+        border: none;
+    }
+}
+
+.selected-add-to-cart {
+    position: absolute;
+    display: flex;
+    padding: 10px;
+    bottom: -15px;
+    border: transparent;
+    background: var(--Shop);
+    color: var(--Rose50);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    &::before,
+    &::after {
+        display: inline-flex;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border: solid 1px var(--Rose50);
+        border-radius: 50%;
+    }
+
+    &::before {
+        content: url("../images/icon-decrement-quantity.svg");
+        padding-bottom: 4px;
+    }
+
+    &::after {
+        content: url("../images/icon-increment-quantity.svg");
+        align-items: center;
+        height: 25px;
+    }
+
+    &:hover {
+        color: var(--Shop);
+        background: var(--Rose50);
     }
 }
