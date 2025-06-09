@@ -2,6 +2,31 @@
     display: flex;
     background-color: var(--Rose100);
     border-radius: 10px;
+
+    @media(max-width: 1470px) {
+        margin: 30px;
+    }
+
+    @media(max-width: 681px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+
+        .cart {
+            margin: 20px;
+        }
+    }
+
+    @media (max-width: 461px) {
+        .store .dessert .container-img .add-to-cart {
+            bottom: -40px;
+            font-size: 12px;
+        }
+
+        .store .dessert .type-dessert {
+            margin-top: 20px;
+        }
+    }
 }
 
 .store {
@@ -19,13 +44,38 @@
     border-radius: 10px;
     color: var(--Rose900);
 
+    @media (max-width: 1119px) {
+        grid-template-areas:
+            "title-desserts title-desserts"
+            "waffle brulee"
+            "macaron tiramisu"
+            "baklava meringue"
+            "cake brownie"
+            "cotta .";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 901px) {
+        grid-template-areas:
+            "title-desserts"
+            "waffle"
+            "brulee"
+            "macaron"
+            "tiramisu"
+            "baklava"
+            "meringue"
+            "cake"
+            "brownie"
+            "cotta";
+        grid-template-columns: 1fr;
+    }
+
     .dessert {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        p,
-        span {
+        p {
             padding: 2px 0;
         }
 
@@ -125,67 +175,115 @@
 
 .cart {
     background: var(--Rose50);
-    margin-top: 40px;
+    width: 350px;
+    margin: 40px 20px 0 0;
     padding: 20px 40px;
     text-align: center;
     color: var(--Shop);
     border-radius: 10px;
     height: min-content;
 
-    img,
     p {
         padding-top: 15px;
-    }
-
-    p {
         color: var(--Rose400);
     }
 }
 
-.selected-img {
-    border: solid 1px var(--Shop);
+.cart .image-cart-init {
+    margin: 0 auto;
+}
 
-    &:hover {
-        border: none;
+.selected-img {
+    border: solid 2px var(--Shop);
+}
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    gap: 40px;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+    p {
+        display: flex;
+        padding: 5px 0;
     }
 }
 
-.selected-add-to-cart {
-    position: absolute;
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #a00;
+    cursor: pointer;
+}
+
+.remove-btn img {
     display: flex;
+    width: 14px;
+    border: solid 1px var(--Rose400);
+    border-radius: 50%;
+    padding: 2px;
+    transition: filter 0.2s ease-in-out, transform 0.2s ease-out;
+}
+
+.remove-btn img:hover {
+    filter: brightness(0) saturate(0) invert(0) sepia(0) saturate(0) hue-rotate(320deg);
+    transform: scale(1.2);
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        padding-top: 15px;
+        font-weight: 700;
+    }
+}
+
+.add-to-cart-selected {
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 185px;
     padding: 10px;
     bottom: -15px;
     border: transparent;
     background: var(--Shop);
     color: var(--Rose50);
     border-radius: 20px;
-    justify-content: center;
-    align-items: center;
     gap: 8px;
+}
 
-    &::before,
-    &::after {
-        display: inline-flex;
-        justify-content: center;
-        width: 18px;
-        height: 18px;
-        border: solid 1px var(--Rose50);
-        border-radius: 50%;
-    }
+.add-to-cart-selected .decrement {
+    height: 18px;
+}
 
-    &::before {
-        content: url("../images/icon-decrement-quantity.svg");
-        padding-bottom: 4px;
-    }
+.add-to-cart-selected .increment,
+.decrement {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-    &::after {
-        content: url("../images/icon-increment-quantity.svg");
-        align-items: center;
-        height: 25px;
-    }
+.esconder {
+    display: none;
+}
 
-    &:hover {
-        color: var(--Shop);
-        background: var(--Rose50);
-    }
+.show {
+    display: flex;
 }

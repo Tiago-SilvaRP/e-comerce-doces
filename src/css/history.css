@@ -4,10 +4,23 @@
     padding: 40px;
     border-radius: 10px;
 
+    @media (max-width: 1470px) {
+        margin: 30px;
+    }
+
     .container-history {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media(max-width: 830px) {
+            display: flex;
+            flex-direction: column;
+
+            .text {
+                margin-bottom: 20px;
+            }
+        }
     }
 
     .text {
@@ -27,5 +40,13 @@
 
     img {
         max-width: 400px;
+
+        @media(max-width: 468px) {
+            max-width: 250px;
+        }
+
+        @media(max-width: 310px) {
+            max-width: 150px;
+        }
     }
 }
