@@ -1,0 +1,54 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--backgroundText);
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+
+    @media(max-width: 1440px) {
+        border-radius: 0;
+        flex-wrap: wrap;
+    }
+
+    .rede {
+        padding: 5px;
+
+        .whats {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .whats i {
+            font-size: 32px;
+        }
+
+        a {
+            color: #000;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    .rede-icons {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+        gap: 10px;
+        font-size: 32px;
+    }
+
+    .opening-hours {
+        text-align: center;
+        padding: 5px;
+
+        h3,
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
