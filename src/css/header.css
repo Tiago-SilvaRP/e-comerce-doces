@@ -40,16 +40,15 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
 
-
             &.open {
                 opacity: 1;
                 z-index: 9;
             }
-
         }
 
         .link {
             color: #000;
+            transition: 0.2s ease-in-out;
 
             &:hover {
                 color: red;
