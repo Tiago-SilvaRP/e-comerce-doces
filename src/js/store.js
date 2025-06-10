@@ -1,10 +1,9 @@
 const buttons = document.querySelectorAll('.add-to-cart');
 const cartCounter = document.querySelector('.counter');
 const cartList = document.getElementById('cart-list');
-const dessertQuantity = document.querySelectorAll('.itemCount')
 
 function renderCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = getCartFromStorage()
     cartList.innerHTML = '';
 
     removeImagTextInitialToCart(cart)
@@ -26,16 +25,23 @@ function addToCart(event) {
         quantity: 1
     };
 
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = getCartFromStorage()
     existingItem(cart, cartItem)
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+    saveCartToStorage(cart);
     renderCart();
-    updateStateOfButtons(cart)
+}
+
+function getCartFromStorage() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCartToStorage(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function existingItem (cart, cartItem) {
-    const existingItem = cart.find(item => item.name === name);
+    const existingItem = cart.find(item => item.name === cartItem.name);
     existingItem ? existingItem.quantity += 1 : cart.push(cartItem);
 }
 
@@ -78,10 +84,10 @@ function itemsListCart(cart) {
         botaoDelet.classList.add('remove-btn');
 
         botaoDelet.addEventListener('click', () => {
-            const updatedCart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = getCartFromStorage()
 
             updatedCart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            saveCartToStorage(updatedCart)
 
             updateStateOfButtons(updatedCart)
             renderCart();
@@ -152,7 +158,7 @@ function updateStateOfButtons(cart) {
 }
 
 function incrementarItemNoCarrinho(name) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = getCartFromStorage()
     const item = cart.find(item => item.name === name);
     if (item) {
         item.quantity += 1;
@@ -161,7 +167,7 @@ function incrementarItemNoCarrinho(name) {
 }
 
 function decrementarItemNoCarrinho(name) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = getCartFromStorage()
     const itemIndex = cart.findIndex(item => item.name === name);
 
     if (itemIndex >= 0) {
@@ -171,7 +177,7 @@ function decrementarItemNoCarrinho(name) {
         if (item.quantity <= 0) {
             cart.splice(itemIndex, 1);
         }
-        localStorage.setItem('cart', JSON.stringify(cart));
+        saveCartToStorage(cart)
     }
 }
 
