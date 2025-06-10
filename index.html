@@ -14,6 +14,15 @@
 <link rel="stylesheet" href="./src/css/home.css">
 <link rel="stylesheet" href="./src/css/store.css">
 <link rel="stylesheet" href="./src/css/history.css">
+<link rel="stylesheet" href="./src/css/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
 
 <body>
     <header class="container header">
@@ -24,8 +33,7 @@
                 <li><a href="#home" class="link">Home</a></li>
                 <li><a href="#products" class="link">Loja</a></li>
                 <li><a href="#about" class="link">Nossa história</a></li>
-                <li><a href="#feedbacks" class="link">Comentários</a></li>
-                <li><a href="#footer" class="link">Siga Doces&cia nas redes</a></li>
+                <li><a href="#footer" class="link">Siga Doces&Cia nas redes</a></li>
             </ul>
 
             <button class="hamburguer" id="btn-hamburguer" aria-label="Menu" aria-expanded="false">
@@ -52,7 +60,8 @@
             <p><strong>Doces&cia — porque a vida merece ser doce.</strong></p>
         </div>
         <div class="img-home">
-            <img src="./src/images/mulher-de-tiro-medio-preparando-sobremesa_23-2148972040.avif" alt="Imagem de funcionaria trabalhando na Doce&Cia">
+            <img src="./src/images/mulher-de-tiro-medio-preparando-sobremesa_23-2148972040.avif"
+                alt="Imagem de funcionaria trabalhando na Doce&Cia">
         </div>
     </section>
 
@@ -320,8 +329,22 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer" class="container footer">
+        <div class="rede">
+            <h3>Nos sigam nas redes</h3>
+            <ul class="rede-icons">
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+            <a href="#" class="whats">Faça sua encomenda <i class="fab fa-whatsapp"></i></a>
+        </div>
 
+        <div class="opening-hours">
+            <h3>Horário de funcionamento</h3>
+            <p>Segunda a Sexta-feira <span>8:00 - 18:00</span></p>
+            <p>Sábados e feriados <span>8:00 - 12:00</span></p>
+        </div>
     </footer>
 
     <script src="./src/js/header.js"></script>
