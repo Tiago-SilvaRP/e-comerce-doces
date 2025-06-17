@@ -7,7 +7,7 @@
 
     @media(max-width: 768px) {
         flex-direction: column;
-        padding: 80px;
+        padding-top: 80px;
     }
 
     .text-home {
