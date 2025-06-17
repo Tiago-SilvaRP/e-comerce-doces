@@ -217,11 +217,25 @@
     }
 }
 
+.btn-finalizar-compra {
+    padding: 10px 20px;
+    background-color: var(--Shop);
+    color: var(--Rose100);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--Green);
+    }
+}
+
 .remove-btn {
     background: none;
     border: none;
     font-size: 18px;
-    color: #a00;
     cursor: pointer;
 }
 
@@ -280,7 +294,7 @@
     cursor: pointer;
 }
 
-.esconder {
+.hidden {
     display: none;
 }
 
