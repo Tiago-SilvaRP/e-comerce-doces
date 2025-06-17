@@ -16,10 +16,6 @@
         margin: 2rem;
         max-width: 600px;
 
-        @media(max-width: 768px) {
-            margin-top: -70px;
-        }
-
         p {
             margin-top: 10px;
             font-size: 18px;
