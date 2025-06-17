@@ -25,11 +25,11 @@
         }
 
         a {
-            color: #000;
+            color: var(--Rose900);
             transition: 0.2s ease-in-out;
 
             &:hover {
-                color: red;
+                color: var(--Shop);
             }
         }
     }

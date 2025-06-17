@@ -47,11 +47,11 @@
         }
 
         .link {
-            color: #000;
+            color: var(--Rose900);
             transition: 0.2s ease-in-out;
 
             &:hover {
-                color: red;
+                color: var(--Shop);
             }
         }
     }
@@ -87,7 +87,7 @@
         .line {
             height: 3px;
             width: 100%;
-            background: #000;
+            background: var(--Rose900);
             transition: 0.3s ease-in-out;
         }
     }
