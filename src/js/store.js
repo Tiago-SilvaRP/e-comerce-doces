@@ -9,6 +9,7 @@ function renderCart() {
     removeImagTextInitialToCart(cart)
     itemsListCart(cart)
     totalCart(cart);
+    completePurchase(cart);
     updateCartItemCount(cart);
     updateStateOfButtons(cart);
 }
@@ -40,7 +41,7 @@ function saveCartToStorage(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function existingItem (cart, cartItem) {
+function existingItem(cart, cartItem) {
     const existingItem = cart.find(item => item.name === cartItem.name);
     existingItem ? existingItem.quantity += 1 : cart.push(cartItem);
 }
@@ -63,10 +64,10 @@ function removeImagTextInitialToCart(cart) {
 }
 
 function ImageDelet() {
-    const novaImage = document.createElement('img');
-    novaImage.src = "./src/images/icon-remove-item.svg";
-    novaImage.alt = "Deletar item do carrinho";
-    return novaImage;
+    const newImage = document.createElement('img');
+    newImage.src = "./src/images/icon-remove-item.svg";
+    newImage.alt = "Deletar item do carrinho";
+    return newImage;
 }
 
 function itemsListCart(cart) {
@@ -80,10 +81,10 @@ function itemsListCart(cart) {
         const descriptioItem = document.createElement('p');
         descriptioItem.textContent = `${item.quantity}x  unid.$${item.price.toFixed(2)}  = $${(item.price * item.quantity).toFixed(2)}`;
 
-        const botaoDelet = document.createElement('button');
-        botaoDelet.classList.add('remove-btn');
+        const btnDelet = document.createElement('button');
+        btnDelet.classList.add('remove-btn');
 
-        botaoDelet.addEventListener('click', () => {
+        btnDelet.addEventListener('click', () => {
             const updatedCart = getCartFromStorage()
 
             updatedCart.splice(index, 1);
@@ -99,10 +100,10 @@ function itemsListCart(cart) {
         itemInfo.appendChild(descriptioItem);
 
         itemElement.appendChild(itemInfo);
-        itemElement.appendChild(botaoDelet);
+        itemElement.appendChild(btnDelet);
         cartList.appendChild(itemElement);
 
-        botaoDelet.appendChild(ImageDelet());
+        btnDelet.appendChild(ImageDelet());
     });
 }
 
@@ -129,6 +130,26 @@ function totalCart(cart) {
     }
 }
 
+function completePurchase(cart) {
+    if (cart.length > 0) {
+        const btnCompletePurchase = document.createElement('button');
+        btnCompletePurchase.textContent = "Finalizar compra";
+        btnCompletePurchase.classList.add("btn-finalizar-compra");
+
+        btnCompletePurchase.addEventListener('click', () => {
+            const confirmPurchase = confirm("Deseja finalizar a compra?");
+
+            if (!confirmPurchase) return;
+
+            localStorage.removeItem("cart");
+            alert("Compra realizada com sucesso!");
+            renderCart();
+        })
+
+        cartList.appendChild(btnCompletePurchase);
+    }
+}
+
 function updateStateOfButtons(cart) {
     const desserts = document.querySelectorAll('.dessert');
 
@@ -139,25 +160,25 @@ function updateStateOfButtons(cart) {
         const image = dessert.querySelector('.img-dessert img');
         const itemCount = dessert.querySelector('.itemCount');
 
-        const itemNoCarrinho = cart.find(item => item.name === name);
+        const itemInCart = cart.find(item => item.name === name);
 
-        if (itemNoCarrinho) {
-            addToCartBtn?.classList.add('esconder');
+        if (itemInCart) {
+            addToCartBtn?.classList.add('hidden');
             selectedControls?.classList.add('show');
             image?.classList.add('selected-img');
 
             if (itemCount) {
-                itemCount.textContent = itemNoCarrinho.quantity
+                itemCount.textContent = itemInCart.quantity;
             }
         } else {
-            addToCartBtn?.classList.remove('esconder');
+            addToCartBtn?.classList.remove('hidden');
             selectedControls?.classList.remove('show');
             image?.classList.remove('selected-img');
         }
     });
 }
 
-function incrementarItemNoCarrinho(name) {
+function incrementItemInCart(name) {
     let cart = getCartFromStorage()
     const item = cart.find(item => item.name === name);
     if (item) {
@@ -166,7 +187,7 @@ function incrementarItemNoCarrinho(name) {
     }
 }
 
-function decrementarItemNoCarrinho(name) {
+function decrementItemInCart(name) {
     let cart = getCartFromStorage()
     const itemIndex = cart.findIndex(item => item.name === name);
 
@@ -194,9 +215,9 @@ function setupIncrementDecrementButtons() {
         const name = dessert.querySelector('.name-dessert')?.textContent.trim();
 
         if (incrementBtn) {
-            incrementarItemNoCarrinho(name);
+            incrementItemInCart(name);
         } else if (decrementBtn) {
-            decrementarItemNoCarrinho(name);
+            decrementItemInCart(name);
         }
         renderCart();
     });
