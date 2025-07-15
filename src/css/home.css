@@ -12,9 +12,9 @@
 
     .text-home {
         background-color: var(--backgroundText);
-        padding: 1rem 1.5rem;
+        padding: 16px 24px;
         border-radius: 10px;
-        margin: 2rem;
+        margin: 32px;
         max-width: 600px;
 
         p {
