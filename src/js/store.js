@@ -41,9 +41,9 @@ function saveCartToStorage(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function existingItem(cart, cartItem) {
-    const existingItem = cart.find(item => item.name === cartItem.name);
-    existingItem ? existingItem.quantity += 1 : cart.push(cartItem);
+function existingItem(cart, newItem) {
+    const existingItem = cart.find(item => item.name === newItem.name);
+    existingItem ? existingItem.quantity += 1 : cart.push(newItem);
 }
 
 buttons.forEach(button => {
